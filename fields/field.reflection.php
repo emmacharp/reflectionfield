@@ -261,13 +261,14 @@
                     ? $data['value_formatted']
                     : null;
                 $label = Widget::Label($this->get('label'));
-                $label->appendChild(
+                
+                $wrapper->appendChild($label);
+                $wrapper->appendChild(
                     Widget::Input(
                         "fields{$fieldnamePrefix}[$element_name]{$fieldnamePostfix}",
                         $value, 'text', $allow_override
                     )
                 );
-                $wrapper->appendChild($label);
             } else {
                 $wrapper->addClass('irrelevant');
             }
